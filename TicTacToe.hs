@@ -22,9 +22,6 @@ instance Eq Coord where -- kaip lyginti koordinates
 
 -- Validation
 
-printMessage :: String -> String
-printMessage message = message 
-
 validate :: String -> Bool
 validate message = 
     validateEqualNumberOfMoves (getPositions [] message)
