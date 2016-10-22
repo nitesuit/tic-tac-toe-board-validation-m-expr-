@@ -1,8 +1,6 @@
 module TicTacToe
 where
 
--- Istaisius bugus ir darant validacija, pasinti 3x3 lenta, kaip elementa
-
 import Data.Char
 import TicTacToe.Messages.MExpr -- :l TicTacToe TestData
 
