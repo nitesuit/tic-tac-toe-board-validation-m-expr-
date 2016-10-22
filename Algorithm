@@ -1,0 +1,45 @@
+Algoritmas:
+
+1. Skaito simbolis po simbolio
+2. Randa skaiciu x
+3. Skaito toliau
+4. Randa skaiciu y
+5. Skaito toliau
+6. Randa raide v 
+7. Suformuoja pozicija
+
+printMessage :: String -> String
+
+validate :: String -> Bool
+
+validateEqualNumberOfMoves :: [Position] -> Bool
+
+validatePositions :: [Position] -> Bool 
+
+countPlayersAtPosition :: Position -> [Position] -> Int
+
+countPlayers :: Char -> [Position] -> Int
+
+getPositions :: [Position] -> String -> [Position]
+
+getPosition :: String -> (Position, String) 
+
+getCoord :: String -> (Coord, String) 
+
+getNumber :: String -> (Int, String)
+
+getPlayer :: String -> (Char, String)
+
+getCoordFromPosition :: Position -> Coord
+
+getXFromCoord :: Coord -> Int
+
+getYFromCoord :: Coord -> Int
+
+getPlayerFromPosition :: Position -> Char
+
+
+
+
+
+
