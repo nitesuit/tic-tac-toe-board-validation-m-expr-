@@ -48,30 +48,6 @@ validatePositions positions =
         then validatePositions' False t
         else validatePositions' valid t
 
-
-countPlayersAtPosition :: Position -> [Position] -> Int
-countPlayersAtPosition position positions =
-    countPlayersAtPosition' 0 position positions
-    where
-      countPlayersAtPosition' :: Int -> Position -> [Position] -> Int
-      countPlayersAtPosition' acc position [] = acc
-      countPlayersAtPosition' acc position (h:t) =
-        if (getCoordFromPosition position) == (getCoordFromPosition h)
-          then countPlayersAtPosition' (acc + 1) position t
-          else countPlayersAtPosition' acc position t
-
-
-countPlayers :: Char -> [Position] -> Int
-countPlayers player positions = 
-    countPlayers' 0 player positions 
-    where
-      countPlayers' :: Int -> Char -> [Position] -> Int
-      countPlayers' acc player [] = acc
-      countPlayers' acc player (h:t) =
-        if (getPlayerFromPosition h) == player
-          then countPlayers' (acc + 1) player t
-          else countPlayers' acc player t
-
 -- Parsing functions
 
 getPositions :: [Position] -> String -> [Position]
@@ -108,6 +84,31 @@ getPlayer :: String -> (Char, String)
 getPlayer ('x':rest) = ('x', rest)
 getPlayer ('o':rest) = ('o', rest)
 getPlayer (c:rest) = getPlayer rest
+
+-- Counters
+
+countPlayersAtPosition :: Position -> [Position] -> Int
+countPlayersAtPosition position positions =
+    countPlayersAtPosition' 0 position positions
+    where
+      countPlayersAtPosition' :: Int -> Position -> [Position] -> Int
+      countPlayersAtPosition' acc position [] = acc
+      countPlayersAtPosition' acc position (h:t) =
+        if (getCoordFromPosition position) == (getCoordFromPosition h)
+          then countPlayersAtPosition' (acc + 1) position t
+          else countPlayersAtPosition' acc position t
+
+
+countPlayers :: Char -> [Position] -> Int
+countPlayers player positions = 
+    countPlayers' 0 player positions 
+    where
+      countPlayers' :: Int -> Char -> [Position] -> Int
+      countPlayers' acc player [] = acc
+      countPlayers' acc player (h:t) =
+        if (getPlayerFromPosition h) == player
+          then countPlayers' (acc + 1) player t
+          else countPlayers' acc player t
 
 -- Helper functions
 
